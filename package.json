@@ -1,0 +1,24 @@
+{
+  "name": "tea-manager",
+  "version": "1.0.0",
+  "description": "a simple manager for different tea",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "keywords": [
+    "express",
+    "tea"
+  ],
+  "author": "shubham rade",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
