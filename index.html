@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Amplify Dashboard - Shubham Rade</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-icon">☁️</div>
+            <span class="brand-name">AWS Amplify</span>
+        </div>
+        <div class="nav-menu">
+            <a href="#" class="nav-link active">Dashboard</a>
+            <a href="#" class="nav-link">Projects</a>
+            <a href="#" class="nav-link">Analytics</a>
+            <a href="#" class="nav-link">Settings</a>
+        </div>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+            <div class="user-profile">SR</div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Overview</h3>
+                <ul class="sidebar-menu">
+                    <li class="menu-item active">
+                        <span class="menu-icon">📊</span>
+                        <span>Dashboard</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="menu-icon">🚀</span>
+                        <span>Deployments</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="menu-icon">📁</span>
+                        <span>Projects</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="menu-icon">📈</span>
+                        <span>Metrics</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Resources</h3>
+                <ul class="sidebar-menu">
+                    <li class="menu-item">
+                        <span class="menu-icon">📚</span>
+                        <span>Documentation</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="menu-icon">💬</span>
+                        <span>Support</span>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">Assignment 6</h1>
+                    <p class="hero-subtitle">PaaS Deployment - AWS Amplify</p>
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        <span>Active & Running</span>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="visual-card"></div>
+                </div>
+            </section>
+
+            <!-- Stats Grid -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">👤</div>
+                    <div class="stat-info">
+                        <h3 class="stat-label">Student Name</h3>
+                        <p class="stat-value">Shubham Rade</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎓</div>
+                    <div class="stat-info">
+                        <h3 class="stat-label">Roll Number</h3>
+                        <p class="stat-value">33164</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏫</div>
+                    <div class="stat-info">
+                        <h3 class="stat-label">Class</h3>
+                        <p class="stat-value">TE 9</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-info">
+                        <h3 class="stat-label">Deployment Date</h3>
+                        <p class="stat-value" id="deploymentDate">Loading...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Deployment Info -->
+            <section class="deployment-section">
+                <div class="deployment-card">
+                    <div class="card-header">
+                        <h2 class="card-title">Deployment Details</h2>
+                        <button class="refresh-btn" id="refreshBtn">🔄 Refresh</button>
+                    </div>
+                    <div class="deployment-info">
+                        <div class="info-row">
+                            <span class="info-label">Platform</span>
+                            <span class="info-value">AWS Amplify</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Region</span>
+                            <span class="info-value">US East (N. Virginia)</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Status</span>
+                            <span class="info-value status-active">✅ Healthy</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Last Updated</span>
+                            <span class="info-value" id="lastUpdated">Just now</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="card-header">
+                        <h2 class="card-title">Activity Log</h2>
+                    </div>
+                    <div class="activity-list" id="activityLog">
+                        <div class="activity-item">
+                            <div class="activity-icon">✅</div>
+                            <div class="activity-content">
+                                <p class="activity-title">Deployment Successful</p>
+                                <p class="activity-time">2 minutes ago</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">🚀</div>
+                            <div class="activity-content">
+                                <p class="activity-title">Build Completed</p>
+                                <p class="activity-time">5 minutes ago</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">📦</div>
+                            <div class="activity-content">
+                                <p class="activity-title">Code Pushed to Repository</p>
+                                <p class="activity-time">10 minutes ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Metrics Section -->
+            <section class="metrics-section">
+                <div class="metrics-card">
+                    <h2 class="card-title">Performance Metrics</h2>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <div class="metric-label">Uptime</div>
+                            <div class="metric-value">99.9%</div>
+                            <div class="metric-bar">
+                                <div class="metric-fill" style="width: 99.9%"></div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-label">Response Time</div>
+                            <div class="metric-value">125ms</div>
+                            <div class="metric-bar">
+                                <div class="metric-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-label">Success Rate</div>
+                            <div class="metric-value">100%</div>
+                            <div class="metric-bar">
+                                <div class="metric-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Shubham Rade | Deployed with ❤️ on AWS Amplify</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
